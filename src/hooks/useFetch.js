@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 function useFetch(url) {
-  const [apiDB, setApiDB] = useState();
+  const [movie, setMovie] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  // console.log("USE--FETCH URL:", url);
 
   useEffect(() => {
     let isCancelled = false;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setApiDB(data);
+        setMovie(data);
         setLoading(false);
       })
       .catch((res) => {
@@ -21,9 +22,9 @@ function useFetch(url) {
     return () => {
       isCancelled = true;
     };
-  }, []);
+  }, [url]);
 
-  return { apiDB, isLoading, error };
+  return { movie, isLoading, error };
 }
 
 export default useFetch;
