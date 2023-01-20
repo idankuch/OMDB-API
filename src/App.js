@@ -8,7 +8,6 @@ import "./App.css";
 function App() {
   const [movieTitle, setMovieTitle] = useState("");
   const [url, setUrl] = useState("");
-
   const onSearch = (url) => {
     setUrl(url);
   };
@@ -16,7 +15,11 @@ function App() {
   return (
     <div className=''>
       <SearchBar value={movieTitle} setValue={setMovieTitle} />
-      <Button searchTitle={movieTitle} setSearchTitle={onSearch}>
+      <Button
+        searchTitle={movieTitle}
+        setSearchTitle={onSearch}
+        disabled={movieTitle == ""}
+      >
         Search
       </Button>
       <DetailsContainer url={url} />

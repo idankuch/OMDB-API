@@ -12,7 +12,7 @@ function Button(props) {
     <button
       className={props.className}
       type={props.type || "button"}
-      disabled={props.isDisabled}
+      disabled={props.disabled}
       onClick={onSearchMovie}
     >
       {props.children}
