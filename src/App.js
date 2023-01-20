@@ -13,7 +13,7 @@ function App() {
   };
 
   return (
-    <div className=''>
+    <div className='app'>
       <SearchBar value={movieTitle} setValue={setMovieTitle} />
       <Button
         searchTitle={movieTitle}
@@ -22,7 +22,7 @@ function App() {
       >
         Search
       </Button>
-      <DetailsContainer url={url} />
+      <DetailsContainer url={url} title={movieTitle} />
     </div>
   );
 }

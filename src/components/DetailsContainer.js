@@ -1,20 +1,22 @@
 import React from "react";
 import useFetch from "../hooks/useFetch";
+import MovieList from "./MovieList";
 
 function DetailsContainer(props) {
-  const { movie, isLoading, error } = useFetch(props.url);
-  // console.log(`URL = ${props.url} || MOVIE DATA = ${JSON.stringify(movie)}`);
+  const { searchResult, isLoading, error } = useFetch(props.url);
+  console.log(`URL = ${props.url} || MOVIE DATA = ${searchResult}`);
 
   return (
     <>
-      {!movie ? (
+      {!searchResult ? (
         <h2>Please enter search title</h2>
       ) : isLoading && !error ? (
         <h1>Loading...</h1>
       ) : (
         <>
-          <h1>{movie.Title}</h1>
-          <h2>{movie.Released}</h2>
+          <h2>{`${searchResult.totalResults} movies matches '${props.title}'`}</h2>
+          <br />
+          <MovieList results={searchResult} />
         </>
       )}
     </>

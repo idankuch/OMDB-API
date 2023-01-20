@@ -4,7 +4,7 @@ import "./SearchButton.css";
 function Button(props) {
   const onSearchMovie = () => {
     const movieTitle = props.searchTitle.replaceAll(" ", "+");
-    const url = `http://www.omdbapi.com/?t=${movieTitle}&apikey=ba53fbe7`;
+    const url = `http://www.omdbapi.com/?s=${movieTitle}&apikey=ba53fbe7`;
     props.setSearchTitle(url);
   };
 

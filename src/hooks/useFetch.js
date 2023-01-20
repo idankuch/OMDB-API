@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function useFetch(url) {
-  const [movie, setMovie] = useState(null);
+  const [searchResult, setSearchResult] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   // console.log("USE--FETCH URL:", url);
@@ -11,7 +11,7 @@ function useFetch(url) {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setMovie(data);
+        setSearchResult(data);
         setLoading(false);
       })
       .catch((res) => {
@@ -24,7 +24,7 @@ function useFetch(url) {
     };
   }, [url]);
 
-  return { movie, isLoading, error };
+  return { searchResult, isLoading, error };
 }
 
 export default useFetch;
