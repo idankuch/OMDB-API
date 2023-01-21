@@ -5,7 +5,11 @@ function MovieList({ results }) {
   return results ? (
     <>
       {results.Search.map((item) => {
-        return <MovieItem id={item.imdbID} movieData={item} />;
+        return (
+          <>
+            <h3>{item.Title}</h3>
+          </>
+        );
       })}
     </>
   ) : null;
