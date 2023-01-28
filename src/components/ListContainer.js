@@ -1,8 +1,9 @@
 import React from "react";
 import useFetch from "../hooks/useFetch";
 import MovieList from "./MovieList";
+import "./ListContainer.css";
 
-function DetailsContainer(props) {
+function ListContainer(props) {
   const { searchResult, isLoading, error } = useFetch(props.url);
   console.log(`URL = ${props.url} || MOVIE DATA = ${searchResult}`);
 
@@ -16,11 +17,13 @@ function DetailsContainer(props) {
         <>
           <h2>{`${searchResult.totalResults} movies matches '${props.title}'`}</h2>
           <br />
-          <MovieList results={searchResult} />
+          <div className='movie-list'>
+            <MovieList results={searchResult} />
+          </div>
         </>
       )}
     </>
   );
 }
 
-export default DetailsContainer;
+export default ListContainer;

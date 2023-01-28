@@ -1,5 +1,6 @@
 import React from "react";
 import MovieItem from "./MovieItem";
+import "./MovieList.css";
 
 function MovieList({ results }) {
   return results ? (
@@ -7,7 +8,7 @@ function MovieList({ results }) {
       {results.Search.map((item) => {
         return (
           <>
-            <h3>{item.Title}</h3>
+            <MovieItem key={item.imdbID} movieData={item}></MovieItem>
           </>
         );
       })}

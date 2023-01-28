@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
-import DetailsContainer from "./components/DetailsContainer";
+import ListContainer from "./components/ListContainer";
 import Button from "./components/UI/SearchButton/SearchButton";
 
 import "./App.css";
@@ -16,13 +16,14 @@ function App() {
     <div className='app'>
       <SearchBar value={movieTitle} setValue={setMovieTitle} />
       <Button
+        className='btn'
         searchTitle={movieTitle}
         setSearchTitle={onSearch}
         disabled={movieTitle == ""}
       >
         Search
       </Button>
-      <DetailsContainer url={url} title={movieTitle} />
+      <ListContainer url={url} title={movieTitle} />
     </div>
   );
 }
