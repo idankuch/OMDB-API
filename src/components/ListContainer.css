@@ -1,6 +1,11 @@
+.list-container {
+  display: flex;
+  margin: auto;
+  width: 80%;
+}
+
 .movie-list {
   display: flex;
   flex-wrap: wrap;
-  /* align-items: stretch; */
   gap: 10px;
 }

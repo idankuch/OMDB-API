@@ -10,15 +10,17 @@ function ListContainer(props) {
   return (
     <>
       {!searchResult ? (
-        <h2>Please enter search title</h2>
+        <h2>Enter search title</h2>
       ) : isLoading && !error ? (
         <h1>Loading...</h1>
       ) : (
         <>
           <h2>{`${searchResult.totalResults} movies matches '${props.title}'`}</h2>
           <br />
-          <div className='movie-list'>
-            <MovieList results={searchResult} />
+          <div className='list-container'>
+            <div className='movie-list'>
+              <MovieList results={searchResult} />
+            </div>
           </div>
         </>
       )}
