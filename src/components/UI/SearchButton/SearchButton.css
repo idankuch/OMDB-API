@@ -5,7 +5,7 @@
   font-family: var(--content-font);
   padding: 5px;
   border-radius: 0.5rem;
-  background-color: rgb(136, 197, 255);
+  background-color: #78beff;
   backdrop-filter: blur(10px);
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
   transition: all 0.1s;
@@ -21,4 +21,5 @@
 
 .btn:disabled {
   transform: none;
+  cursor: initial;
 }
